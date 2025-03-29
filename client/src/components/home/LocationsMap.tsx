@@ -1,15 +1,32 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, Building, Phone, Map } from "lucide-react";
 
 export default function LocationsMap() {
-  const [activeLocation, setActiveLocation] = useState<string | null>(null);
-  
   const locations = [
-    { id: "dubai", name: "Dubai", position: { top: "30%", left: "60%" } },
-    { id: "hyderabad", name: "Hyderabad", position: { top: "40%", left: "65%" } },
-    { id: "mumbai", name: "Mumbai", position: { top: "42%", left: "62%" } },
-    { id: "bengaluru", name: "Bengaluru", position: { top: "44%", left: "64%" } }
+    { 
+      id: "dubai", 
+      name: "Dubai", 
+      address: "Dubai Knowledge Park, Dubai, UAE",
+      phone: "+971 50 123 4567"
+    },
+    { 
+      id: "hyderabad", 
+      name: "Hyderabad", 
+      address: "Jubilee Hills, Hyderabad - 500033",
+      phone: "+91 76543 21098"
+    },
+    { 
+      id: "mumbai", 
+      name: "Mumbai", 
+      address: "Andheri East, Mumbai - 400069",
+      phone: "+91 98765 43210"
+    },
+    { 
+      id: "bengaluru", 
+      name: "Bengaluru", 
+      address: "Koramangala, Bengaluru - 560034",
+      phone: "+91 87654 32109"
+    }
   ];
 
   return (
@@ -22,63 +39,54 @@ export default function LocationsMap() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-bold text-3xl text-foreground mb-4">Our Global Presence</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Find Rankerslab in these major cities worldwide.</p>
+          <h2 className="font-bold text-3xl text-foreground mb-4">Our Presence</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Discover Rankerslab's educational centers across India and Dubai. Our strategically located campuses offer state-of-the-art facilities and the same high-quality education standards.
+          </p>
         </motion.div>
         
-        <motion.div 
-          className="bg-white rounded-xl shadow-lg p-4 md:p-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="relative h-80 md:h-96 rounded-lg overflow-hidden bg-gray-200">
-            <div className="absolute inset-0 bg-blue-100/50 flex justify-center items-center">
-              <div className="relative w-full h-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1589519160732-57fc6aa70951?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                  alt="World Map" 
-                  className="w-full h-full object-cover opacity-30"
-                />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {locations.map((location, index) => (
+            <motion.div 
+              key={location.id}
+              className="bg-white rounded-xl shadow-md p-6 border-t-4 border-primary hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Map className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-xl text-foreground mb-3">{location.name}</h3>
+                <div className="w-12 h-1 bg-primary/30 rounded mb-4"></div>
                 
-                {locations.map((location) => (
-                  <div 
-                    key={location.id}
-                    className="absolute group cursor-pointer"
-                    style={{ top: location.position.top, left: location.position.left }}
-                    onMouseEnter={() => setActiveLocation(location.id)}
-                    onMouseLeave={() => setActiveLocation(null)}
-                  >
-                    <div className="w-4 h-4 bg-primary rounded-full relative animate-pulse">
-                      <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
-                    </div>
-                    <div className={`absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 bg-gray-900 text-white text-sm px-3 py-1 rounded-lg transition-opacity duration-300 whitespace-nowrap ${activeLocation === location.id || activeLocation === null ? 'opacity-100' : 'opacity-0'}`}>
-                      {location.name}
-                    </div>
-                  </div>
-                ))}
+                <div className="flex items-start mb-2">
+                  <Building className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                  <p className="text-gray-600 text-center text-sm">{location.address}</p>
+                </div>
+                
+                <div className="flex items-center">
+                  <Phone className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
+                  <p className="text-primary font-medium text-center text-sm">{location.phone}</p>
+                </div>
               </div>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-            {locations.map((location, index) => (
-              <motion.div 
-                key={location.id}
-                className={`bg-gray-50 hover:bg-primary/10 rounded-lg p-3 text-center transition-colors cursor-pointer ${activeLocation === location.id ? 'bg-primary/10' : ''}`}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => setActiveLocation(location.id === activeLocation ? null : location.id)}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.1 * index }}
-              >
-                <MapPin className="h-5 w-5 text-primary mx-auto mb-1" />
-                <h3 className="font-medium">{location.name}</h3>
-              </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
+        </div>
+        
+        <motion.div
+          className="mt-10 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <p className="text-gray-600 italic">
+            * Virtual classes available globally, regardless of your location.
+          </p>
         </motion.div>
       </div>
     </section>
