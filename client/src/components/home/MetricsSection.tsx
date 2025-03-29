@@ -5,8 +5,8 @@ export default function MetricsSection() {
   const metrics = [
     { value: 322433, label: "Video Hours" },
     { value: 2000, label: "Daily Live Classes" },
-    { value: 10000, label: "Active Students" },
-    { value: 8000, label: "Elite Tutors" }
+    { value: 40000, label: "Active Students" },
+    { value: 10000, label: "Elite Tutors" }
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);

@@ -21,7 +21,7 @@ export default function HeroSection({ onOpenSignUpModal }: HeroSectionProps) {
               Unlock Your Child's Learning Potential
             </h1>
             <p className="text-gray-600 text-lg mb-6">
-              Join Rankerslab for a personalized learning experience designed to empower students and help them achieve academic excellence.
+              Join Rankerslab for a personalized learning experience designed to empower students and help them achieve academic excellence. Empowering Students Across All Boards – CBSE, ICSE, IGCSE, SSC, IB, and NIOS! Specialized Coaching for NEET, IIT, and Olympiads to Help You Achieve Unmatched Success.
             </p>
             <Button 
               onClick={onOpenSignUpModal}
