@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 
+import f1 from "./Screenshot (310).png";
+import f2 from "./Screenshot (311).png";
+import f3 from "./Screenshot (312).png";
+import f4 from "./Screenshot (313).png";
+
 export default function GoalSection() {
   return (
     <section id="goal" className="py-12 md:py-16 bg-white">
@@ -20,20 +25,23 @@ export default function GoalSection() {
             </div>
           </motion.div>
           
+          {/* Image Grid */}
           <motion.div 
-            className="w-full md:w-1/2"
+            className="w-full md:w-1/2 grid grid-cols-2 gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                alt="Students celebrating success" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
+            {[f1, f2, f3, f4].map((image, index) => (
+              <div key={index} className="rounded-xl overflow-hidden shadow-lg bg-white flex items-center justify-center">
+                <img 
+                  src={image} 
+                  alt={`Goal image ${index + 1}`} 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>

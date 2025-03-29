@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-
+import LearningImage from "./Screenshot (309).png";
 interface HeroSectionProps {
   onOpenSignUpModal: () => void;
 }
@@ -41,7 +41,7 @@ export default function HeroSection({ onOpenSignUpModal }: HeroSectionProps) {
           >
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                src={LearningImage} 
                 alt="Child learning enthusiastically" 
                 className="w-full h-auto object-cover"
               />
