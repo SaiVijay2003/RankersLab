@@ -7,25 +7,25 @@ export default function LocationsMap() {
       id: "dubai", 
       name: "Dubai", 
       address: "Dubai Knowledge Park, Dubai, UAE",
-      phone: "+971 50 123 4567"
+      mail:"dubai@rankers.com"
     },
     { 
       id: "hyderabad", 
       name: "Hyderabad", 
       address: "Jubilee Hills, Hyderabad - 500033",
-      phone: "+91 76543 21098"
+      mail:"hyderabad@rankers.com"
     },
     { 
       id: "mumbai", 
       name: "Mumbai", 
       address: "Andheri East, Mumbai - 400069",
-      phone: "+91 98765 43210"
+      mail:"mumbai@rankers.com"
     },
     { 
       id: "bengaluru", 
       name: "Bengaluru", 
       address: "Koramangala, Bengaluru - 560034",
-      phone: "+91 87654 32109"
+      mail:"bengaluru@rankers.com"
     }
   ];
 

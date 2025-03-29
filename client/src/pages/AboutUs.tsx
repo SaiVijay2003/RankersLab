@@ -111,22 +111,22 @@ export default function AboutUs() {
     {
       city: "Mumbai",
       address: "Andheri East, Mumbai - 400069",
-      phone: "+91 98765 43210"
+      
     },
     {
       city: "Bengaluru",
       address: "Koramangala, Bengaluru - 560034",
-      phone: "+91 87654 32109"
+      
     },
     {
       city: "Hyderabad",
       address: "Jubilee Hills, Hyderabad - 500033",
-      phone: "+91 76543 21098"
+      
     },
     {
       city: "Dubai",
       address: "Dubai Knowledge Park, Dubai, UAE",
-      phone: "+971 50 123 4567"
+      
     }
   ];
 
@@ -175,7 +175,7 @@ export default function AboutUs() {
               <div className="md:w-2/3">
                 <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
                 <p className="text-gray-600 text-lg mb-4">
-                  At Rankerslab, our mission is to make quality education accessible to all students, regardless of their geographical location or economic background. We believe in empowering students with the knowledge, skills, and confidence needed to excel academically and in life.
+                  At Rankerslab(LearnLab Education Pvt Ltd), our mission is to make quality education accessible to all students, regardless of their geographical location or economic background. We believe in empowering students with the knowledge, skills, and confidence needed to excel academically and in life.
                 </p>
                 <p className="text-gray-600 text-lg">
                   Our goal is achieved when you succeed! We aim to empower students with personalized & all-inclusive learning while guiding them to remarkable success.

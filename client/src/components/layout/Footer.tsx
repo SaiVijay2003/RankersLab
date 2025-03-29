@@ -56,10 +56,7 @@ export default function Footer() {
                 <Mail className="h-4 w-4 mt-1 mr-2 text-primary" />
                 <span>info@rankerslab.com</span>
               </li>
-              <li className="text-gray-400 flex items-start">
-                <Phone className="h-4 w-4 mt-1 mr-2 text-primary" />
-                <span>+1 (800) 123-4567</span>
-              </li>
+              
               <li className="text-gray-400 flex items-start">
                 <MapPin className="h-4 w-4 mt-1 mr-2 text-primary" />
                 <span>Headquarters: Dubai, UAE</span>
