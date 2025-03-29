@@ -88,6 +88,10 @@ export default function Navbar({ onOpenSignUpModal }: NavbarProps) {
                 Study Material
               </Link>
               
+              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
+                About Us
+              </Link>
+              
               <Link href="#" className="text-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
@@ -142,6 +146,10 @@ export default function Navbar({ onOpenSignUpModal }: NavbarProps) {
           
           <Link href="#" className="block py-2 text-foreground hover:text-primary transition-colors">
             Study Material
+          </Link>
+          
+          <Link href="/about" className="block py-2 text-foreground hover:text-primary transition-colors">
+            About Us
           </Link>
           
           <Link href="#" className="block py-2 text-foreground hover:text-primary transition-colors">
