@@ -248,22 +248,30 @@ export default function AboutUs() {
           </div>
           
           {/* Contact Information */}
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Our Locations</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-foreground mb-3">Our Presence</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover Rankerslab's educational centers across India and Dubai. Our strategically located campuses offer state-of-the-art facilities and the same high-quality education standards.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {locations.map((location, index) => (
               <motion.div 
                 key={index}
-                className="bg-white rounded-xl shadow-md p-6"
+                className="bg-white rounded-xl shadow-md p-6 border-t-4 border-primary hover:shadow-lg transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <div className="flex items-center justify-center mb-4">
-                  <Map className="w-6 h-6 text-primary mr-2" />
-                  <h3 className="font-semibold text-xl text-foreground">{location.city}</h3>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <Map className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-2xl text-foreground mb-3">{location.city}</h3>
+                  <div className="w-12 h-1 bg-primary/30 rounded mb-4"></div>
+                  <p className="text-gray-600 text-center mb-3">{location.address}</p>
+                  <p className="text-primary font-medium text-center">{location.phone}</p>
                 </div>
-                <p className="text-gray-600 text-center mb-2">{location.address}</p>
-                <p className="text-primary font-medium text-center">{location.phone}</p>
               </motion.div>
             ))}
           </div>
