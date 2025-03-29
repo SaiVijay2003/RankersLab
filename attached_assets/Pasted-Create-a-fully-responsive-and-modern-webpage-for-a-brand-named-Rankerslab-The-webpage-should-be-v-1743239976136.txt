@@ -1,0 +1,154 @@
+Create a fully responsive and modern webpage for a brand named "Rankerslab." The webpage should be visually appealing, incorporating animations, high-quality images, and an engaging user experience. The page should be structured with multiple sections that guide users through the platform's offerings, features, and benefits.
+
+Page Structure & Features:
+1. Navigation Bar (Sticky Navbar)
+The navbar should be simple and modern with the following sections:
+
+Courses (Dropdown on hover with sample course names)
+
+Study Material
+
+Blog
+
+Sign-Up Button (Clicking this should open a sign-up form)
+
+The navbar should be fully responsive and adjust for smaller screens.
+
+2. Hero Section
+The hero section should be visually striking and include:
+
+A high-quality image of a child learning enthusiastically.
+
+A bold headline promoting the brand.
+
+A subheading that explains the mission of Rankerslab.
+
+A Call-to-Action (CTA) button to encourage users to sign up.
+
+3. Goal Statement Section
+This section should emphasize Rankerslab's mission with the following text:
+
+"Our goal is achieved when you succeed! We aim to empower students with personalized & all-inclusive learning while guiding them to remarkable success."
+
+This section should include a supporting image on the side.
+
+4. Features Section (Stylish Feature Cards)
+This section should showcase the key features of Rankerslab with well-designed, stylish cards.
+
+Features to include:
+
+Personalized Learning
+
+Live & Engaging
+
+Elite Tutors
+
+Each card should have:
+
+A unique color theme for better aesthetics.
+
+Icons or images to support each feature.
+
+A hover effect animation for an interactive experience.
+
+5. Teaching Methodology Section
+This section should be split into two columns:
+
+Left Side: A compelling description of how Rankerslab teaches students.
+
+Right Side: A visually appealing image or illustration showcasing interactive learning.
+
+The section should be clean and engaging.
+
+6. Locations Section (Interactive Map)
+This section should contain a stylized map highlighting Rankerslab's available locations:
+
+Dubai
+
+Hyderabad
+
+Mumbai
+
+Bengaluru
+
+Each location should be visually marked on the map.
+
+The section should have a modern design with hover effects or tooltips.
+
+7. Metrics Section (Statistics Showcase)
+This section should display important metrics of Rankerslab with a modern animated counter:
+
+322,433+ Video Hours
+
+2K+ Daily Live Classes
+
+10K+ Active Students
+
+8K+ Elite Tutors
+
+These numbers should be styled in an eye-catching way with animation.
+
+8. User Reviews Section (Carousel)
+A sliding testimonial section with animated transitions.
+
+Each review should include:
+
+User's name and profile picture (optional).
+
+Review text (Positive feedback about the brand).
+
+Star rating (out of 5 stars).
+
+The carousel should have smooth automatic sliding animation.
+
+9. FAQ Section
+This section should have frequently asked questions in an accordion-style design.
+
+Example FAQs:
+
+How do I enroll in a course?
+
+What are the payment options?
+
+Are the classes live or recorded?
+
+How can I contact an instructor?
+
+The FAQ section should be interactive, allowing users to expand and collapse questions.
+
+10. Sign-Up Functionality (Basic User Experience)
+A sign-up form where users can enter their details.
+
+After signing up, the system should hardcode a successful sign-up experience (for demo purposes).
+
+The user should receive a confirmation message:
+
+"Sign-up Successful! Welcome to Rankerslab."
+
+The system should store dummy user data in a sample database.
+
+Technical Requirements:
+Fully responsive design (works on mobile, tablet, and desktop).
+
+Modern animations for a smooth user experience.
+
+Stylish UI elements with latest color themes.
+
+Dropdown menus and interactive hover effects.
+
+Map integration with location markers.
+
+Carousel animation for testimonials.
+
+Accordion-style FAQ section.
+
+Basic JavaScript logic for simulating user sign-up.
+
+Deliverables:
+A fully functional and styled HTML/CSS/JavaScript webpage.
+
+Animations and interactive effects for user engagement.
+
+A dummy sign-up feature with hardcoded success message.
+
+A sample database storing user information.
