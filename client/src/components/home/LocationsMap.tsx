@@ -70,7 +70,7 @@ export default function LocationsMap() {
                 
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                  <p className="text-primary font-medium text-center text-sm">{location.phone}</p>
+                  <p className="text-primary font-medium text-center text-sm">{location.mail}</p>
                 </div>
               </div>
             </motion.div>
