@@ -270,7 +270,7 @@ export default function AboutUs() {
                   <h3 className="font-bold text-2xl text-foreground mb-3">{location.city}</h3>
                   <div className="w-12 h-1 bg-primary/30 rounded mb-4"></div>
                   <p className="text-gray-600 text-center mb-3">{location.address}</p>
-                  <p className="text-primary font-medium text-center">{location.phone}</p>
+                
                 </div>
               </motion.div>
             ))}
