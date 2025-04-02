@@ -34,7 +34,6 @@ export default function TestimonialSection() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const isMobile = useMobile();
   
   const goToNext = () => {
@@ -53,14 +52,65 @@ export default function TestimonialSection() {
     const interval = setInterval(goToNext, 5000);
     return () => clearInterval(interval);
   }, []);
-  
-  useEffect(() => {
-    if (carouselRef.current) {
-      const slideWidth = isMobile ? 100 : 100 / (isMobile ? 1 : 3);
-      carouselRef.current.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-    }
-  }, [currentIndex, isMobile]);
 
+  // Mobile view implementation - render all testimonials vertically
+  if (isMobile) {
+    return (
+      <section id="testimonials" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-bold text-3xl text-foreground mb-4">What Our Students Say</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hear from the students who have experienced the Rankerslab difference.
+            </p>
+          </motion.div>
+          
+          <div className="space-y-6">
+            {testimonials.map((testimonial, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <div className="bg-gray-50 rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full mr-4 flex items-center justify-center text-primary">
+                      <User className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3 flex">
+                    {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                    {testimonial.rating % 1 !== 0 && (
+                      <Star className="h-4 w-4 fill-current opacity-50" />
+                    )}
+                  </div>
+                  <p className="text-gray-700 italic">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop view with carousel
   return (
     <section id="testimonials" className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -78,20 +128,19 @@ export default function TestimonialSection() {
         </motion.div>
         
         <div className="relative">
-          <div 
-            className="overflow-hidden w-full"
-            style={{ touchAction: "pan-y" }}
-          >
+          <div className="overflow-hidden w-full">
             <div 
-              ref={carouselRef}
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ width: `${testimonials.length * 100}%` }}
+              style={{ 
+                width: `${testimonials.length * 100}%`,
+                transform: `translateX(-${currentIndex * (100 / testimonials.length)}%)`
+              }}
             >
               {testimonials.map((testimonial, index) => (
                 <div 
-                  key={index}
-                  className="w-full md:w-1/3 px-4"
-                  style={{ flexBasis: isMobile ? "100%" : "33.333%" }}
+                  key={index} 
+                  className="px-4"
+                  style={{ flexBasis: `${100 / testimonials.length}%` }}
                 >
                   <div className="bg-gray-50 rounded-xl p-6 shadow-md h-full">
                     <div className="flex items-center mb-4">
@@ -123,7 +172,7 @@ export default function TestimonialSection() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full shadow-md z-10 hidden md:flex"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full shadow-md z-10"
             onClick={goToPrev}
           >
             <ChevronLeft className="h-5 w-5 text-primary" />
@@ -132,7 +181,7 @@ export default function TestimonialSection() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full shadow-md z-10 hidden md:flex"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full shadow-md z-10"
             onClick={goToNext}
           >
             <ChevronRight className="h-5 w-5 text-primary" />
